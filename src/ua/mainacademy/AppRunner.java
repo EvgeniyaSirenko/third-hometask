@@ -2,13 +2,11 @@ package ua.mainacademy;
 
 import ua.mainacademy.model.*;
 
-import java.util.Set;
+import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.logging.Logger;
 
 public class AppRunner {
-    private static final Logger LOG = Logger.getLogger(AppRunner.class.getName());
-
     public static void main(String[] args) {
         Circle circle1 = new Circle(20);
         Circle circle2 = new Circle(10);
@@ -34,7 +32,7 @@ public class AppRunner {
         Trapezoid trapezoid2 = new Trapezoid(20, 35, 10);
         Trapezoid trapezoid3 = new Trapezoid(25, 45, 10);
 
-        Set<Shape> shapes = new TreeSet<>();
+        SortedSet<Shape> shapes = new TreeSet<>();
         shapes.add(circle1);
         shapes.add(circle2);
         shapes.add(circle3);
@@ -54,12 +52,19 @@ public class AppRunner {
         shapes.add(trapezoid2);
         shapes.add(trapezoid3);
 
+        /*
+        This part of code helps to check the whole collection
+        */
         for (Shape shape : shapes) {
             String name = shape.getClass().getSimpleName();
             System.out.println("Shape has area " + shape.getArea() + " and is " + name);
         }
 
-        System.out.println("The smallest shape is " + shapes.iterator().next().getClass().getSimpleName() + " and it's area is ");
+        /*
+        This part of code gives the result of home task
+        */
+        System.out.println("The smallest shape is " + shapes.first().getClass().getSimpleName() + " and it's area is " + shapes.first().getArea());
+        System.out.println("The biggest shape is " + shapes.last().getClass().getSimpleName() + " and it's area is " + shapes.last().getArea());
 
     }
 }
