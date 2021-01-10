@@ -1,10 +1,8 @@
 package ua.mainacademy;
 
 import ua.mainacademy.model.*;
-
 import java.util.SortedSet;
 import java.util.TreeSet;
-import java.util.logging.Logger;
 
 public class AppRunner {
     public static void main(String[] args) {
